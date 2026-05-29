@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <title>notes-02</title>
+  </head>
+  <body>
+    <form action="" class="note-form">
+      <div>
+        <label>
+          <h3>Note title:</h3>
+          <input type="text" name="noteTitle" />
+        </label>
+        <label>
+          <h3>Note text:</h3>
+          <textarea type="text" name="noteText"></textarea>
+        </label>
+      </div>
+      <button type="submit" class="note-form__btn">add</button>
+    </form>
+    <div class="note-filter">
+      <button class="note-filter-btn" data-btnName="active">active</button
+      ><button class="note-filter-btn" data-btnName="finished">finished</button>
+      <button class="note-filter-btn" data-btnName="all">all</button>
+    </div>
+    <ul class="note-list"></ul>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
