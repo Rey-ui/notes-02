@@ -51,6 +51,52 @@
     filter: invert(1) brightness(2);
   }
 } */
+
+:root[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --surface-color: #ffffff;
+  --text-main: #0f172a;
+  --accent: #6366f1;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --text-main: #f8fafc;
+  --accent: #818cf8;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: 1s all;
+}
 .done {
   text-decoration: line-through;
+}
+.active {
+  background-color: brown;
+}
+.header__theme-svg {
+  fill: #818cf8;
+  stroke: #818cf8;
+}
+.loading {
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 2. Класс, который мы будем вешать на иконку или кнопку */
+.loading {
+  /* Название анимации, время, линейность (без пауз) и бесконечный цикл */
+  animation: spin 1s linear infinite;
+
+  /* Блокируем кнопку, чтобы юзер не спамил запросами, пока идет загрузка */
+  pointer-events: none;
+  opacity: 0.7;
 }

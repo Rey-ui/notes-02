@@ -7,26 +7,114 @@
     <link rel="stylesheet" href="./src/css/style.css" />
     <title>notes-02</title>
   </head>
-  <body>
-    <form action="" class="note-form">
-      <div>
-        <label>
-          <h3>Note title:</h3>
-          <input type="text" name="noteTitle" />
-        </label>
-        <label>
-          <h3>Note text:</h3>
-          <textarea type="text" name="noteText"></textarea>
-        </label>
+  <body data-theme="light">
+    <header class="header">
+      <div class="container header__container">
+        <a href="#" class="header__logo-container">
+          <div class="header__logo">
+            <svg width="28" height="28">
+              <use
+                href="./src/images/svg/symbol-defs.svg#icon-document-text"
+              ></use>
+            </svg>
+          </div>
+          <span class="header__text">Clarity</span>
+        </a>
+        <button class="header__theme-btn">
+          <div class="header__theme-svg-cont"></div>
+          <span class="header__theme-text"></span>
+        </button>
       </div>
-      <button type="submit" class="note-form__btn">add</button>
-    </form>
-    <div class="note-filter">
-      <button class="note-filter-btn" data-btnName="active">active</button
-      ><button class="note-filter-btn" data-btnName="finished">finished</button>
-      <button class="note-filter-btn" data-btnName="all">all</button>
-    </div>
-    <ul class="note-list"></ul>
+    </header>
+    <main class="main">
+      <section class="notes-hero">
+        <form class="note-form">
+          <div>
+            <label>
+              <h3>Note title:</h3>
+              <input type="text" name="noteTitle" />
+            </label>
+            <label>
+              <h3>Note text:</h3>
+              <input type="password" name="noteText" />
+            </label>
+            <label>
+              <h3>Select priority:</h3>
+              <div class="note-priorities">
+                <label
+                  ><span>Top priority</span
+                  ><input type="radio" name="priority" value="Top-1" /></label
+                ><label
+                  ><span>Secondary priority</span
+                  ><input type="radio" name="priority" value="Secondary-2"
+                /></label>
+                <label
+                  ><span>Third priority</span
+                  ><input type="radio" name="priority" value="Third-3"
+                /></label>
+              </div>
+            </label>
+          </div>
+          <button type="submit" class="note-form__btn">add</button>
+        </form>
+        <aside class="notes-hero__details-bar details-bar">
+          <div>
+            <div class="details-bar__quote">
+              <button class="details-bar__quote-btn">
+                <svg class="details-bar__quote-svg" width="28" height="28">
+                  <use
+                    href="./src/images/svg/symbol-defs.svg#icon-refresh-cw"
+                  ></use>
+                </svg>
+              </button>
+              <div class="details-bar__quote-container"></div>
+            </div>
+            <div class="">
+              <ul class="note-statistics-list">
+                <li>
+                  <h4>Active</h4>
+                  <span data-name="active">0</span>
+                </li>
+                <li>
+                  <h4>Finished</h4>
+                  <span data-name="finished">0</span>
+                </li>
+                <li>
+                  <h4>All</h4>
+                  <span data-name="all">0</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="note-filter-stats">
+              <button class="note-filter-btn" data-btnName="active">
+                active</button
+              ><button class="note-filter-btn" data-btnName="finished">
+                finished
+              </button>
+              <button class="note-filter-btn" data-btnName="all">all</button>
+            </div>
+            <select class="note-select-priority" name="selectPriority">
+              <option value="all">All</option>
+              <option value="Top-1">Top-1</option>
+              <option value="Secondary-2">Secondary-2</option>
+              <option value="Third-3">Third-3</option>
+            </select>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <ul class="note-list">
+      <li class="note-item" id="${id}">
+        <h4>${title}</h4>
+        <span>${priority}</span>
+        <p></p>
+        <span>${date}</span><button class="note-btn">X</button
+        ><button class="note-complitedbtn">complite</button>
+      </li>
+    </ul>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
