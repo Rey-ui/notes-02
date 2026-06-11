@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./src/css/style.css" />
     <title>notes-02</title>
   </head>
-  <body data-theme="light">
+  <body data-theme="Light">
     <header class="header">
       <div class="container header__container">
         <a href="#" class="header__logo-container">
@@ -21,88 +21,174 @@
           <span class="header__text">Clarity</span>
         </a>
         <button class="header__theme-btn">
-          <div class="header__theme-svg-cont"></div>
-          <span class="header__theme-text"></span>
+          <div class="header__theme-svg-cont">
+            <svg class="header__theme-svg" width="40" height="40">
+              <use href="./src/images/svg/symbol-defs.svg#icon-sun1"></use>
+            </svg>
+          </div>
+          <span class="header__theme-text">Light</span>
         </button>
       </div>
     </header>
     <main class="main">
-      <section class="notes-hero">
-        <form class="note-form">
-          <div>
-            <label>
-              <h3>Note title:</h3>
-              <input type="text" name="noteTitle" />
-            </label>
-            <label>
-              <h3>Note text:</h3>
-              <input type="password" name="noteText" />
-            </label>
-            <label>
-              <h3>Select priority:</h3>
-              <div class="note-priorities">
-                <label
-                  ><span>Top priority</span
-                  ><input type="radio" name="priority" value="Top-1" /></label
-                ><label
-                  ><span>Secondary priority</span
-                  ><input type="radio" name="priority" value="Secondary-2"
-                /></label>
-                <label
-                  ><span>Third priority</span
-                  ><input type="radio" name="priority" value="Third-3"
-                /></label>
+      <section class="notes-hero section">
+        <div class="container hero-container">
+          <div class="notes-hero__form-container">
+            <h2 class="notes-hero__form-title">
+              <span>Create Note</span>
+              <svg class="header__theme-svg" width="20" height="20">
+                <use href="./src/images/svg/symbol-defs.svg#icon-edit-2"></use>
+              </svg>
+            </h2>
+            <form class="notes-hero__form notes-form">
+              <div class="notes-form__content">
+                <label class="notes-form__label">
+                  <h3 class="notes-form__title">Title:</h3>
+                  <input
+                    class="notes-form__input"
+                    type="text"
+                    name="noteTitle"
+                    placeholder="Enter note title..."
+                  />
+                </label>
+                <label class="notes-form__label">
+                  <h3 class="notes-form__title">Content:</h3>
+                  <textarea
+                    class="notes-form__textarea"
+                    type="text"
+                    name="noteText"
+                    placeholder="Enter note text..."
+                  ></textarea>
+                </label>
+                <label class="notes-form__label">
+                  <h3 class="notes-form__title">Priority:</h3>
+                  <div class="notes-form__priorities form-priorities">
+                    <label class="form-prioritet__label"
+                      ><span class="form-prioritet__text">High-1</span
+                      ><input
+                        type="radio"
+                        name="priority"
+                        value="Top-1"
+                        class="form-prioritet__input" /></label
+                    ><label class="form-prioritet__label"
+                      ><span class="form-prioritet__text">Medium-2</span
+                      ><input
+                        class="form-prioritet__input"
+                        type="radio"
+                        name="priority"
+                        value="Secondary-2"
+                    /></label>
+                    <label class="form-prioritet__label"
+                      ><span class="form-prioritet__text">Low-3</span
+                      ><input
+                        class="form-prioritet__input"
+                        type="radio"
+                        name="priority"
+                        value="Third-3"
+                    /></label>
+                  </div>
+                </label>
               </div>
-            </label>
-          </div>
-          <button type="submit" class="note-form__btn">add</button>
-        </form>
-        <aside class="notes-hero__details-bar details-bar">
-          <div>
-            <div class="details-bar__quote">
-              <button class="details-bar__quote-btn">
-                <svg class="details-bar__quote-svg" width="28" height="28">
-                  <use
-                    href="./src/images/svg/symbol-defs.svg#icon-refresh-cw"
-                  ></use>
+              <button type="submit" class="notes-form__btn">
+                <svg class="header__theme-svg" width="40" height="40">
+                  <use href="./src/images/svg/symbol-defs.svg#icon-plus"></use>
                 </svg>
+                <span class="notes-form__btn-text">Add Note</span>
               </button>
-              <div class="details-bar__quote-container"></div>
-            </div>
-            <div class="">
-              <ul class="note-statistics-list">
-                <li>
-                  <h4>Active</h4>
-                  <span data-name="active">0</span>
-                </li>
-                <li>
-                  <h4>Finished</h4>
-                  <span data-name="finished">0</span>
-                </li>
-                <li>
-                  <h4>All</h4>
-                  <span data-name="all">0</span>
-                </li>
-              </ul>
-            </div>
+            </form>
           </div>
-          <div>
-            <div class="note-filter-stats">
-              <button class="note-filter-btn" data-btnName="active">
-                active</button
-              ><button class="note-filter-btn" data-btnName="finished">
-                finished
-              </button>
-              <button class="note-filter-btn" data-btnName="all">all</button>
+          <aside class="notes-hero__details-bar details-bar">
+            <div class="details-bar__info">
+              <div class="details-bar__quote">
+                <div class="details-bar__quote-header">
+                  <h3 class="details-bar__quote-title">
+                    <svg width="28" height="28">
+                      <use
+                        href="./src/images/svg/symbol-defs.svg#icon-library"
+                      ></use>
+                    </svg>
+                    <span>Daily quote</span>
+                  </h3>
+                  <button class="details-bar__quote-btn">
+                    <svg class="details-bar__quote-svg" width="28" height="28">
+                      <use
+                        href="./src/images/svg/symbol-defs.svg#icon-refresh-cw"
+                      ></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="details-bar__quote-container"></div>
+              </div>
+              <div class="details-bar__statistics">
+                <h3 class="details-bar__statistics-title">
+                  <svg width="28" height="28">
+                    <use
+                      href="./src/images/svg/symbol-defs.svg#icon-bar-chart"
+                    ></use>
+                  </svg>
+                  <span>Statistics</span>
+                </h3>
+                <ul class="details-bar__statistics-list">
+                  <li class="details-bar__statistics-item statistics-item">
+                    <div class="statistics-item__content">
+                      <svg class="statistics-item__svg" width="28" height="28">
+                        <use
+                          href="./src/images/svg/symbol-defs.svg#icon-circle"
+                        ></use>
+                      </svg>
+                      <h4 class="statistics-item__title">Active</h4>
+                    </div>
+
+                    <span class="statistics-item__text" data-name="active"
+                      >0</span
+                    >
+                  </li>
+                  <li class="details-bar__statistics-item">
+                    <div class="statistics-item__content">
+                      <svg class="statistics-item__svg" width="28" height="28">
+                        <use
+                          href="./src/images/svg/symbol-defs.svg#icon-checkmark-outline"
+                        ></use>
+                      </svg>
+                      <h4 class="statistics-item__title">Finished</h4>
+                    </div>
+                    <span class="statistics-item__text" data-name="finished"
+                      >0</span
+                    >
+                  </li>
+                  <li class="details-bar__statistics-item">
+                    <div class="statistics-item__content">
+                      <svg class="statistics-item__svg" width="28" height="28">
+                        <use
+                          href="./src/images/svg/symbol-defs.svg#icon-file-text"
+                        ></use>
+                      </svg>
+                      <h4 class="statistics-item__title">All</h4>
+                    </div>
+                    <span class="statistics-item__text" data-name="all">0</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <select class="note-select-priority" name="selectPriority">
-              <option value="all">All</option>
-              <option value="Top-1">Top-1</option>
-              <option value="Secondary-2">Secondary-2</option>
-              <option value="Third-3">Third-3</option>
-            </select>
-          </div>
-        </aside>
+            <div>
+              <div class="note-filter-stats">
+                <button class="note-filter-btn" data-btnName="active">
+                  active</button
+                ><button class="note-filter-btn" data-btnName="finished">
+                  finished
+                </button>
+                <button class="note-filter-btn" data-btnName="all">all</button>
+              </div>
+              <select class="note-select-priority" name="selectPriority">
+                <option value="all">All</option>
+                <option value="Top-1">Top-1</option>
+                <option value="Secondary-2">Secondary-2</option>
+                <option value="Third-3">Third-3</option>
+              </select>
+            </div>
+          </aside>
+        </div>
       </section>
     </main>
 
@@ -115,6 +201,21 @@
         ><button class="note-complitedbtn">complite</button>
       </li>
     </ul>
+    <!-- <button class="text-prior">all</button>
+    <div class="">
+      <label for=""
+        ><span>1</span
+        ><input class="prior-notes" type="radio" name="prior" value="p1"
+      /></label>
+      <label for=""
+        ><span>2</span
+        ><input class="prior-notes" type="radio" name="prior" value="p2"
+      /></label>
+      <label for=""
+        ><span>3</span
+        ><input class="prior-notes" type="radio" name="prior" value="p3"
+      /></label>
+    </div> -->
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

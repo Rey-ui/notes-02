@@ -1,4 +1,5 @@
 import {
+  applyTheme,
   handleChangeTheme,
   handleCompliteNote,
   handleDeleteNote,
@@ -22,5 +23,14 @@ refs.filtersContainer.addEventListener("click", (e) => {
 refs.themeToggleBtn.addEventListener("click", handleChangeTheme);
 refs.quoteBtnEl.addEventListener("click", showRandomQuote);
 renderNotesList(notes, refs.noteListeEl);
-
+// applyTheme(themeData);
 showRandomQuote();
+// refs.priorsEl.forEach((prior) => {
+//   prior.addEventListener("change", (e) => {
+//     console.log(e.target.value);
+//     refs.priorText.textContent = e.target.value;
+//   });
+// });
+// refs.priorText.addEventListener('click', (e)=>{
+
+// })

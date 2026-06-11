@@ -1,0 +1,39 @@
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  margin: 0 auto;
+  width: 100%;
+  transition: 1s all;
+}
+.done {
+  text-decoration: line-through;
+}
+.active {
+  background-color: brown;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: spin 1s linear infinite;
+  pointer-events: none;
+  opacity: 0.7;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 16px;
+}
+.section {
+  padding: 45px 0;
+}

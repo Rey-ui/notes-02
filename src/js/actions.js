@@ -82,38 +82,40 @@ function showStatistics(notes) {
   complitedNotesEl.textContent = notes.filter((note) => note.done).length;
   allNotesEl.textContent = notes.length;
 }
-
 let themeData =
-  String(localStorage.getItem(STORAGE_THEME_KEY)) || refs.bodyEl.dataset.theme;
-
+  localStorage.getItem(STORAGE_THEME_KEY) || refs.bodyEl.dataset.theme;
 function handleChangeTheme(event) {
-  themeData = themeData === "light" ? "dark" : "light";
+  themeData = themeData === "Light" ? "Dark" : "Light";
   localStorage.setItem(STORAGE_THEME_KEY, themeData);
   applyTheme(themeData);
 }
 function applyTheme(theme) {
   refs.bodyEl.dataset.theme = theme;
+
   const themeBtn = refs.themeToggleBtn;
   const themeText = themeBtn.querySelector(".header__theme-text");
   const themeSvgCont = themeBtn.querySelector(".header__theme-svg-cont");
-  if (theme === "light") {
+  if (theme === "Light") {
+    themeSvgCont.innerHTML = "";
     themeSvgCont.innerHTML = ` 
-  <svg class="header__theme-svg" width="28" height="28">
+  <svg class="header__theme-svg" width="40" height="40">
             <use
               href="${sprite}#icon-sun1"
             ></use>
           </svg>`;
   } else {
+    themeSvgCont.innerHTML = "";
     themeSvgCont.innerHTML = ` 
-  <svg class="header__theme-svg" width="28" height="28">
+  <svg class="header__theme-svg" width="40" height="40">
             <use
               href="${sprite}#icon-moon"
             ></use>
           </svg>`;
   }
-
+  themeText.textContent = "";
   themeText.textContent = theme;
 }
+
 async function showRandomQuote() {
   const btn = refs.quoteBtnEl;
   const svg = btn.querySelector(".details-bar__quote-svg");
@@ -123,7 +125,7 @@ async function showRandomQuote() {
     refs.quoteTextEl.innerHTML = "Loading...";
     const randomQuote = await fethRandomQuote();
     if (randomQuote) {
-      refs.quoteTextEl.innerHTML = `<p>"${randomQuote[0].quote}"</p><h4>—${randomQuote[0].author}</h4>`;
+      refs.quoteTextEl.innerHTML = `<p class="quote-content">"${randomQuote[0].quote}"</p><h4 class="quote-title">—${randomQuote[0].author}</h4>`;
     }
   } catch (err) {
     console.log(err);
@@ -146,4 +148,5 @@ export {
   handleCompliteNote,
   handleChangeTheme,
   showRandomQuote,
+  applyTheme,
 };

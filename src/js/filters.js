@@ -25,7 +25,6 @@ function handleFilter(e, render, filtersBtns, noteListeEl) {
   btn.classList.add("active");
   const btnDataName = btn.dataset.btnname;
   filters.stats = btnDataName || "all";
-  console.log(btnDataName);
   const filtredArr = filtersNotes(notes, filters);
   render(filtredArr, noteListeEl);
 }
@@ -33,7 +32,6 @@ function selectPriority(e, renderNotesList, noteListeEl) {
   const selectedValue = e.currentTarget.value;
   if (selectedValue === "") return renderNotesList(notes, noteListeEl);
   filters.priority = selectedValue || "all";
-  console.log(selectedValue);
   const filtredArr = filtersNotes(notes, filters);
   renderNotesList(filtredArr, noteListeEl);
 }
