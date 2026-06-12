@@ -1,8 +1,10 @@
 import {
   applyTheme,
   handleChangeTheme,
+  handleClearNotes,
   handleCompliteNote,
   handleDeleteNote,
+  handleShowOptions,
   handleSubmitForm,
   showRandomQuote,
 } from "./actions.js";
@@ -14,9 +16,9 @@ import { refs, notes } from "./services/refs.js";
 refs.noteListeEl.addEventListener("click", handleDeleteNote);
 refs.noteListeEl.addEventListener("click", handleCompliteNote);
 refs.formEl.addEventListener("submit", handleSubmitForm);
-refs.selectEl.addEventListener("change", (e) => {
-  selectPriority(e, renderNotesList, refs.noteListeEl);
-});
+// refs.selectEl.addEventListener("change", (e) => {
+//   selectPriority(e, renderNotesList, refs.noteListeEl);
+// });
 refs.filtersContainer.addEventListener("click", (e) => {
   handleFilter(e, renderNotesList, refs.filtersBtns, refs.noteListeEl);
 });
@@ -25,12 +27,15 @@ refs.quoteBtnEl.addEventListener("click", showRandomQuote);
 renderNotesList(notes, refs.noteListeEl);
 // applyTheme(themeData);
 showRandomQuote();
-// refs.priorsEl.forEach((prior) => {
-//   prior.addEventListener("change", (e) => {
-//     console.log(e.target.value);
-//     refs.priorText.textContent = e.target.value;
-//   });
-// });
+refs.priorsEl.forEach((prior) => {
+  prior.addEventListener("change", (e) => {
+    selectPriority(e, renderNotesList, refs.noteListeEl);
+    refs.selectBtnEl.textContent = e.target.value;
+    refs.selectEl.classList.remove("visible");
+  });
+});
+refs.clearBtnEl.addEventListener("click", handleClearNotes);
 // refs.priorText.addEventListener('click', (e)=>{
 
 // })
+refs.selectBtnEl.addEventListener("click", handleShowOptions);

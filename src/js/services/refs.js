@@ -4,19 +4,21 @@ const refs = {
   bodyEl: document.body,
   formEl: document.querySelector(".notes-form"),
   noteListeEl: document.querySelector(".note-list"),
-  filtersContainer: document.querySelector(".note-filter-stats"),
-  filtersBtns: document.querySelectorAll(".note-filter-btn"),
+  filtersContainer: document.querySelector(".details-bar__filter-stats"),
+  filtersBtns: document.querySelectorAll(".details-bar__filter-btn"),
   stats: {
     active: document.querySelector('[data-name="active"]'),
     complited: document.querySelector('[data-name="finished"]'),
     all: document.querySelector('[data-name="all"]'),
   },
-  selectEl: document.querySelector(".note-select-priority"),
+
   themeToggleBtn: document.querySelector(".header__theme-btn"),
   quoteTextEl: document.querySelector(".details-bar__quote-container"),
   quoteBtnEl: document.querySelector(".details-bar__quote-btn"),
-  // priorsEl: document.querySelectorAll(".prior-notes"),
-  // priorText: document.querySelector(".text-prior"),
+  priorsEl: document.querySelectorAll(".details-bar__priority"),
+  selectEl: document.querySelector(".details-bar__select-priority"),
+  selectBtnEl: document.querySelector(".details-bar__select-priority-btn"),
+  clearBtnEl: document.querySelector(".details-bar__clear-btn"),
 };
 let notes = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 

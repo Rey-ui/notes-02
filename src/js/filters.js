@@ -5,7 +5,6 @@ let filters = {
   priority: "all",
 };
 function filtersNotes(filterNotes, filterValues) {
-  console.log(filterValues);
   return filterNotes
     .filter((note) => {
       if (filterValues.stats === "active") return !note.done;
@@ -20,7 +19,7 @@ function filtersNotes(filterNotes, filterValues) {
 }
 function handleFilter(e, render, filtersBtns, noteListeEl) {
   if (e.target === e.currentTarget) return;
-  const btn = e.target.closest(".note-filter-btn");
+  const btn = e.target.closest(".details-bar__filter-btn");
   filtersBtns.forEach((filterBtn) => filterBtn.classList.remove("active"));
   btn.classList.add("active");
   const btnDataName = btn.dataset.btnname;

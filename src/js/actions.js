@@ -140,6 +140,16 @@ function showLoader(svg) {
 function hideLoader(svg) {
   svg.classList.remove("loading");
 }
+function handleClearNotes() {
+  notes.length = 0;
+  // localStorage.removeItem(STORAGE_KEY);
+  saveNotes(notes, STORAGE_KEY);
+  refs.noteListeEl.innerHTML = "";
+  renderNotesList(notes, refs.noteListeEl);
+}
+function handleShowOptions(e) {
+  refs.selectEl.classList.toggle("visible");
+}
 applyTheme(themeData);
 showStatistics(notes);
 export {
@@ -149,4 +159,6 @@ export {
   handleChangeTheme,
   showRandomQuote,
   applyTheme,
+  handleClearNotes,
+  handleShowOptions,
 };

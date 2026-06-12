@@ -4,7 +4,7 @@
 }
 .hero-container {
   display: flex;
-  gap: 30px;
+  gap: 25px;
 }
 .notes-hero__form-container {
   padding: 25px;
@@ -236,7 +236,7 @@
 .details-bar__quote-container {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 15px;
   color: var(--text-secondary);
 }
 .quote-content {
@@ -300,4 +300,12 @@
 .statistics-item__text {
   font-weight: 600;
   font-size: var(--fs-body);
+}
+.details-bar__select-priority-cont {
+  position: relative;
+}
+.details-bar__select-priority {
+  display: none;
+  position: absolute;
+  top: 40px;
 }

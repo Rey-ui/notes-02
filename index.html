@@ -171,21 +171,81 @@
                 </ul>
               </div>
             </div>
-            <div>
-              <div class="note-filter-stats">
-                <button class="note-filter-btn" data-btnName="active">
-                  active</button
-                ><button class="note-filter-btn" data-btnName="finished">
-                  finished
-                </button>
-                <button class="note-filter-btn" data-btnName="all">all</button>
+            <div class="details-bar__filters">
+              <h3 class="details-bar__filter-title">
+                <svg width="28" height="28">
+                  <use
+                    href="./src/images/svg/symbol-defs.svg#icon-sliders"
+                  ></use>
+                </svg>
+                <span>Filters</span>
+              </h3>
+              <div class="details-bar__filters-cont">
+                <div class="details-bar__filter-stats-cont">
+                  <h4 class="details-bar__filter-stats-title">By Status</h4>
+                  <div class="details-bar__filter-stats">
+                    <button
+                      class="details-bar__filter-btn"
+                      data-btnName="active"
+                    >
+                      Active</button
+                    ><button
+                      class="details-bar__filter-btn"
+                      data-btnName="finished"
+                    >
+                      Finished
+                    </button>
+                    <button class="details-bar__filter-btn" data-btnName="all">
+                      All
+                    </button>
+                  </div>
+                </div>
+                <div class="details-bar__select-priority-cont">
+                  <h4 class="details-bar__select-priority-title">
+                    By Priority
+                  </h4>
+                  <button
+                    class="details-bar__select-priority-btn"
+                    type="button"
+                  >
+                    All
+                  </button>
+                  <div class="details-bar__select-priority">
+                    <input
+                      type="radio"
+                      class="details-bar__priority"
+                      name="details-bar__priority"
+                      value="all"
+                    />All
+                    <input
+                      type="radio"
+                      class="details-bar__priority"
+                      name="details-bar__priority"
+                      value="Top-1"
+                    />Top-1
+                    <input
+                      type="radio"
+                      class="details-bar__priority"
+                      name="details-bar__priority"
+                      value="Secondary-2"
+                    />Secondary-2
+                    <input
+                      type="radio"
+                      class="details-bar__priority"
+                      name="details-bar__priority"
+                      value="Third-3"
+                    />Third-3
+                  </div>
+                </div>
               </div>
-              <select class="note-select-priority" name="selectPriority">
-                <option value="all">All</option>
-                <option value="Top-1">Top-1</option>
-                <option value="Secondary-2">Secondary-2</option>
-                <option value="Third-3">Third-3</option>
-              </select>
+              <button type="button" class="details-bar__clear-btn">
+                <svg width="28" height="28">
+                  <use
+                    href="./src/images/svg/symbol-defs.svg#icon-trash-2"
+                  ></use>
+                </svg>
+                <span>Clear all notes</span>
+              </button>
             </div>
           </aside>
         </div>
